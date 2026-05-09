@@ -57,7 +57,17 @@ app.get('/', (req, res) => {
 });
 
 // Start Server
-httpServer.listen(PORT, async () => {
-  await connectDB(); 
-  console.log(`🚀 Server is running on port: ${PORT}`);
-});
+const startServer = async () => {
+  try {
+    await connectDB();
+
+    httpServer.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+
+  } catch (error) {
+    console.log("Server Error:", error);
+  }
+};
+
+startServer();
