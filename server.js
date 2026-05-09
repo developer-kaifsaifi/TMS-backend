@@ -14,7 +14,7 @@ const httpServer = createServer(app);
 const PORT = process.env.PORT || 5000;
 
 // CORS setup for both Express and Socket.io
-const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+const allowedOrigins = ["https://digiflow-chi.vercel.app", "http://localhost:5173"];
 
 app.use(cors({
   origin: allowedOrigins,
