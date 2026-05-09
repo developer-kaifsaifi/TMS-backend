@@ -26,7 +26,7 @@ export const registerBusiness = useTryCatch(async (req, res) => {
   // Frontend ka scan URL jise customer scan karega
   // (PORT aur Domain baad me environment variables se replace kar lena)
   // registerBusiness controller ka ye part update karke dekho:
-const scanUrl = `http://localhost:5173/scan/${business._id}`;
+const scanUrl = `https://digiflow-chi.vercel.app/scan/${business._id}`;
 const qrImageBase64 = await QRCode.toDataURL(scanUrl);
 
 // Seedhe update command chalao
